@@ -8,21 +8,13 @@ import {
   SheetHeader,
   SheetTitle,
 } from "@/components/ui/sheet"
+import { sessions } from "@/constants/navLinks"
 import Link from "next/link"
 
 type SheetMenuProps = {
   open: boolean
   onOpenChange: (open: boolean) => void
 }
-
-const sessions = [
-  { name: "Home", href: "/" },
-  { name: "Nossos Serviços", href: "#services" },
-  { name: "Sobre Nós", href: "#about" },
-  { name: "Gata da Lua", href: "/aromaterapia" },
-  { name: "Contato", href: "#contact" },
-  { name: "Horário de Atendimento", href: "#footer" },
-]
 
 const SheetMenu = ({ open, onOpenChange }: SheetMenuProps) => {
   return (

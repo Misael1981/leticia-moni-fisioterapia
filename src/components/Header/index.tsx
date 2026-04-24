@@ -1,5 +1,7 @@
 import Image from "next/image"
 import ButtonSheetMenu from "./components/ButtonSheetMenu"
+import ButtonNotification from "../ButtonNotification"
+import NavLinksDesktop from "./components/NavLinksDesktop"
 
 const Header = () => {
   return (
@@ -18,6 +20,8 @@ const Header = () => {
         </h1>
       </div>
       <ButtonSheetMenu />
+      <NavLinksDesktop />
+      <ButtonNotification />
     </header>
   )
 }

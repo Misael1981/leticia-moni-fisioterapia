@@ -12,12 +12,12 @@ const ButtonSheetMenu = () => {
   }
 
   return (
-    <>
+    <div className="lg:hidden">
       <Button className="bg-blue-custom" size="icon-lg" onClick={toggleMenu}>
         <HiMenuAlt3 />
       </Button>
       <SheetMenu open={isOpen} onOpenChange={setIsOpen} />
-    </>
+    </div>
   )
 }
 
