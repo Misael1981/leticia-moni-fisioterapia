@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Open_Sans, Montserrat, Alex_Brush } from "next/font/google"
 import "./globals.css"
 import { cn } from "@/lib/utils"
+import Header from "@/components/Header"
 
 const openSans = Open_Sans({
   subsets: ["latin"],
@@ -41,7 +42,12 @@ export default function RootLayout({
         alexBrush.variable,
       )}
     >
-      <body className="flex min-h-full flex-col">{children}</body>
+      <body className="flex min-h-full flex-col">
+        <div>
+          <Header />
+          {children}
+        </div>
+      </body>
     </html>
   )
 }
