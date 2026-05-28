@@ -21,7 +21,7 @@ type TreatmentCardProps = {
 
 const TreatmentCard = ({ treatment }: TreatmentCardProps) => {
   return (
-    <Card className="border-blue-custom w-full max-w-75 justify-between border-2 p-4 lg:max-w-60">
+    <Card className="border-blue-custom h-88 w-full max-w-75 justify-between border-2 p-4 lg:max-w-60">
       <CardHeader className="space-y-2 p-0">
         <div className="flex justify-center">
           <div className="bg-blue-custom relative h-20 w-20 rounded-2xl p-4">
@@ -43,7 +43,7 @@ const TreatmentCard = ({ treatment }: TreatmentCardProps) => {
         </CardDescription>
       </CardContent>
       <CardFooter className="p-0">
-        <Button variant="ghost" className="w-full">
+        <Button variant="ghost" className="text-blue-custom w-full">
           Saiba Mais
         </Button>
       </CardFooter>
