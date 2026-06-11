@@ -3,7 +3,6 @@ import { notFound } from "next/navigation"
 import TreatmentHeader from "./components/TreatmentHeader"
 import DescriptionCards from "./components/DescriptionCards"
 import { Badge } from "@/components/ui/badge"
-import TreatmentAction from "./components/TreatmentAction"
 import TestimonialsTreatment from "./components/TestimonialsTreatment"
 
 interface TreatmentPageProps {
@@ -61,9 +60,13 @@ export default async function TreatmentPage({ params }: TreatmentPageProps) {
                 Indicado para
               </h3>
 
-              <div className="flex w-full flex-wrap items-center justify-around gap-4">
+              <div className="flex w-full flex-wrap items-center justify-center gap-4">
                 {tags.map((tag) => (
-                  <Badge key={tag} className="text-md bg-blue-custom p-3">
+                  <Badge
+                    key={tag}
+                    className="border-blue-custom text-blue-custom border"
+                    variant="outline"
+                  >
                     {tag}
                   </Badge>
                 ))}
@@ -110,10 +113,6 @@ export default async function TreatmentPage({ params }: TreatmentPageProps) {
           </DescriptionCards>
         </div>
       </section>
-
-      {/* <div className="flex w-full flex-col items-center justify-between gap-6 p-4">
-        <TreatmentAction />
-      </div> */}
       <TestimonialsTreatment />
     </div>
   )

@@ -1,4 +1,8 @@
+"use client"
+
+import { VideoCard } from "@/components/VideoCard"
 import Image from "next/image"
+import { useState } from "react"
 
 type TestimonialCardProps = {
   testimonial: {
@@ -14,10 +18,17 @@ type TestimonialCardProps = {
 }
 
 const TestimonialCard = ({ testimonial, className }: TestimonialCardProps) => {
+  const [isOpen, setIsOpen] = useState(false)
+
+  const toggleModal = () => {
+    setIsOpen(!isOpen)
+  }
+
   return (
     <article
       key={testimonial.id}
-      className={`group flex w-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-cyan-400/30 hover:bg-white/8 md:max-w-80 ${className || ""}`}
+      className={`group flex w-full cursor-pointer flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-cyan-400/30 hover:bg-white/8 md:max-w-80 ${className || ""}`}
+      onClick={toggleModal}
     >
       {/* Imagem do Card */}
       <div className="relative aspect-video overflow-hidden">
@@ -67,6 +78,10 @@ const TestimonialCard = ({ testimonial, className }: TestimonialCardProps) => {
 
         <a
           href={testimonial.videoUrl}
+          onClick={(e) => {
+            e.preventDefault()
+            e.stopPropagation()
+          }}
           className="inline-flex items-center gap-2 text-sm font-medium text-cyan-300 transition-colors hover:text-cyan-200"
         >
           Assistir depoimento completo
@@ -86,6 +101,13 @@ const TestimonialCard = ({ testimonial, className }: TestimonialCardProps) => {
           </svg>
         </a>
       </div>
+
+      <VideoCard
+        videoUrl={testimonial.videoUrl}
+        open={isOpen}
+        onChange={toggleModal}
+        title={testimonial.name}
+      />
     </article>
   )
 }

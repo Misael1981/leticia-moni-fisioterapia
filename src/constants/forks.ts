@@ -6,7 +6,7 @@ export const testimonials = [
     recovery: "Voltou a correr após 6 meses de dor no joelho",
     thumbnail:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200&auto=format&fit=crop",
-    videoUrl: "#",
+    videoUrl: "/videos/lagarticha.mp4",
     quote:
       "Achei que nunca mais conseguiria praticar exercícios sem dor. O tratamento mudou completamente minha rotina.",
   },
@@ -17,7 +17,7 @@ export const testimonials = [
     recovery: "Recuperação da mobilidade após cirurgia no ombro",
     thumbnail:
       "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1200&auto=format&fit=crop",
-    videoUrl: "#",
+    videoUrl: "/videos/lagarticha.mp4",
     quote:
       "O cuidado da equipe me deu segurança durante todo o processo. Hoje consigo trabalhar normalmente novamente.",
   },
@@ -28,7 +28,7 @@ export const testimonials = [
     recovery: "Melhora significativa nas dores lombares",
     thumbnail:
       "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=1200&auto=format&fit=crop",
-    videoUrl: "#",
+    videoUrl: "/videos/lagarticha.mp4",
     quote:
       "Além da melhora física, recuperei minha confiança para viver sem medo da dor.",
   },
