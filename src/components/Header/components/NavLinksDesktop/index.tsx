@@ -17,7 +17,10 @@ const NavLinksDesktop = () => {
           return (
             <li key={session.name}>
               <Link href={session.href}>
-                <Button variant={isActive ? "default" : "secondary"}>
+                <Button
+                  variant={isActive ? "default" : "secondary"}
+                  className="bg-beige text-blue-custom hover:bg-blue-custom hover:text-cream"
+                >
                   {session.name}
                 </Button>
               </Link>

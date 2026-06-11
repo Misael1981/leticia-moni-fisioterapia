@@ -4,6 +4,7 @@ import TreatmentHeader from "./components/TreatmentHeader"
 import DescriptionCards from "./components/DescriptionCards"
 import { Badge } from "@/components/ui/badge"
 import TreatmentAction from "./components/TreatmentAction"
+import TestimonialsTreatment from "./components/TestimonialsTreatment"
 
 interface TreatmentPageProps {
   params: Promise<{
@@ -110,9 +111,10 @@ export default async function TreatmentPage({ params }: TreatmentPageProps) {
         </div>
       </section>
 
-      <div className="flex w-full flex-col items-center justify-between gap-6 p-4">
+      {/* <div className="flex w-full flex-col items-center justify-between gap-6 p-4">
         <TreatmentAction />
-      </div>
+      </div> */}
+      <TestimonialsTreatment />
     </div>
   )
 }
