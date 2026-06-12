@@ -24,9 +24,10 @@ const TreatmentsList = ({ treatments }: TreatmentsListProps) => {
   return (
     <div className="flex w-full justify-center px-4 md:px-8 lg:px-0">
       <Carousel
-        className="w-full max-w-60 sm:max-w-lg lg:max-w-5xl"
+        className="xs:max-w-xs mx-auto w-full max-w-70 sm:max-w-xl md:max-w-3xl lg:max-w-5xl"
         opts={{
           loop: true,
+          align: "start",
         }}
         plugins={[
           Autoplay({
@@ -35,13 +36,15 @@ const TreatmentsList = ({ treatments }: TreatmentsListProps) => {
           }),
         ]}
       >
-        <CarouselContent className="flex lg:ml-0 lg:grid lg:flex-none lg:grid-cols-4 lg:gap-6">
+        <CarouselContent>
           {treatments.map((treatment) => (
             <CarouselItem
               key={treatment.id}
-              className="basis-full pl-4 sm:basis-[50%] lg:basis-full lg:pl-0"
+              className="flex basis-full pl-4 sm:basis-1/2 lg:basis-1/4"
             >
-              <TreatmentCard treatment={treatment} />
+              <div className="h-full w-full p-1">
+                <TreatmentCard treatment={treatment} />
+              </div>
             </CarouselItem>
           ))}
         </CarouselContent>
