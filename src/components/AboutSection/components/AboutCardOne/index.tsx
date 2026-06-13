@@ -12,7 +12,7 @@ const AboutCardOne = () => {
 
       {/* Gradiente */}
       <div className="absolute inset-0 bg-linear-to-t from-slate-900/98 via-slate-900/50 to-transparent" />
-      <div className="absolute inset-0 bg-linear-to-t from-slate-900/98 via-slate-900/50 to-transparent" />
+      <div className="absolute inset-0 bg-linear-to-t from-slate-900/10 via-slate-900/50 to-transparent" />
 
       <div className="absolute inset-0 flex flex-col justify-between p-6">
         <div className="flex justify-end">

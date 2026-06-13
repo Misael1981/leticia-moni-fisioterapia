@@ -69,6 +69,27 @@
   --cream-light: #d0cfc6;
   --cream-dark: #b8b195;
 
+  --gradient-blue: linear-gradient(
+    142deg,
+    rgb(9, 33, 49) 0%,
+    rgb(54, 88, 112) 55%,
+    rgb(9, 33, 49) 100%
+  );
+
+  --gradient-beige: linear-gradient(
+    142deg,
+    rgb(147, 83, 50) 0%,
+    rgb(171, 109, 91) 55%,
+    rgb(147, 83, 50) 100%
+  );
+
+  --gradient-cream: linear-gradient(
+    142deg,
+    rgb(239, 233, 206) 0%,
+    rgb(179, 145, 61) 55%,
+    rgb(239, 233, 206) 100%
+  );
+
   /* SUPERFÍCIES */
   --bg-main: var(--cream);
   --bg-soft: var(--beige-light);
@@ -118,6 +139,20 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+}
+
+@layer utilities {
+  .bg-blue-gradient {
+    background: var(--gradient-blue);
+  }
+
+  .bg-beige-gradient {
+    background: var(--gradient-beige);
+  }
+
+  .bg-cream-gradient {
+    background: var(--gradient-cream);
+  }
 }
 
 @layer base {
