@@ -9,6 +9,7 @@ export const testimonials = [
     videoUrl: "/videos/lagarticha.mp4",
     quote:
       "Achei que nunca mais conseguiria praticar exercícios sem dor. O tratamento mudou completamente minha rotina.",
+    rating: 5,
   },
   {
     id: 2,
@@ -20,6 +21,7 @@ export const testimonials = [
     videoUrl: "/videos/lagarticha.mp4",
     quote:
       "O cuidado da equipe me deu segurança durante todo o processo. Hoje consigo trabalhar normalmente novamente.",
+    rating: 4,
   },
   {
     id: 3,
@@ -31,5 +33,6 @@ export const testimonials = [
     videoUrl: "/videos/lagarticha.mp4",
     quote:
       "Além da melhora física, recuperei minha confiança para viver sem medo da dor.",
+    rating: 5,
   },
 ]

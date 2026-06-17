@@ -2,6 +2,7 @@ import AboutSection from "@/components/AboutSection"
 import GataDaLuaSession from "@/components/GataDaLuaSession"
 import HeroSection from "@/components/HeroSection"
 import OurServices from "@/components/OurServices"
+import TestimonialSection from "@/components/TestimonialSection"
 
 export default function Home() {
   return (
@@ -14,6 +15,8 @@ export default function Home() {
         <AboutSection />
 
         <GataDaLuaSession />
+
+        <TestimonialSection />
       </main>
     </div>
   )
