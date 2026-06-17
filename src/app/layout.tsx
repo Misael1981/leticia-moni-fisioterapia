@@ -1,8 +1,14 @@
 import type { Metadata } from "next"
-import { Open_Sans, Montserrat, Alex_Brush } from "next/font/google"
+import {
+  Open_Sans,
+  Montserrat,
+  Alex_Brush,
+  Kaushan_Script,
+} from "next/font/google"
 import "./globals.css"
 import { cn } from "@/lib/utils"
 import Header from "@/components/Header"
+import localFont from "next/font/local"
 
 const openSans = Open_Sans({
   subsets: ["latin"],
@@ -16,8 +22,30 @@ const montserrat = Montserrat({
 
 const alexBrush = Alex_Brush({
   subsets: ["latin"],
-  weight: "400", // importante pra essa fonte
+  weight: "400",
   variable: "--font-alex-brush",
+})
+
+const kaushanScript = Kaushan_Script({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-kaushan-script",
+})
+
+const anotherShabby = localFont({
+  src: [
+    {
+      path: "../fonts/Anothershabby_trial.woff",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../fonts/Anothershabby_trial_regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+  variable: "--font-custom",
 })
 
 export const metadata: Metadata = {
@@ -40,6 +68,8 @@ export default function RootLayout({
         openSans.variable,
         montserrat.variable,
         alexBrush.variable,
+        anotherShabby.variable,
+        kaushanScript.variable,
       )}
     >
       <body className="flex min-h-full flex-col">

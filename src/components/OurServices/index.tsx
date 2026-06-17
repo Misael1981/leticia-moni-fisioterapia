@@ -7,7 +7,7 @@ const OurServices = async () => {
 
   return (
     <section className="bg-cream flex justify-center p-4 lg:p-8" id="services">
-      <div className="max-w-5xl space-y-4 lg:space-y-8">
+      <div className="max-w-6xl space-y-4 lg:space-y-8">
         <ComponentHeader />
 
         <div className="text-blue-custom space-y-4">
