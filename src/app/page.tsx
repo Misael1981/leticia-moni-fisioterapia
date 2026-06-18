@@ -1,4 +1,5 @@
 import AboutSection from "@/components/AboutSection"
+import Footer from "@/components/Footer"
 import GataDaLuaSession from "@/components/GataDaLuaSession"
 import HeroSection from "@/components/HeroSection"
 import OurServices from "@/components/OurServices"
@@ -18,6 +19,7 @@ export default function Home() {
 
         <TestimonialSection />
       </main>
+      <Footer />
     </div>
   )
 }

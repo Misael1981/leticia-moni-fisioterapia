@@ -26,10 +26,15 @@ const TestimonialSection = () => {
           </h3>
         </div>
 
-        <ScrollArea className="w-full whitespace-nowrap">
-          <div className="flex justify-center gap-4">
+        <ScrollArea className="w-full">
+          <div className="flex gap-4 px-2 lg:justify-center">
             {testimonials.map((testimonial) => (
-              <TestimonialCard key={testimonial.id} testimonial={testimonial} />
+              <div
+                key={testimonial.id}
+                className="min-w-[80%] shrink-0 sm:min-w-[320px]"
+              >
+                <TestimonialCard testimonial={testimonial} />
+              </div>
             ))}
           </div>
           <ScrollBar orientation="horizontal" />

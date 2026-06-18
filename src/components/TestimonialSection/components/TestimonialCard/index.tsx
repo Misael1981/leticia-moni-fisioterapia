@@ -17,10 +17,12 @@ type TestimonialCardProps = {
 
 const TestimonialCard = ({ testimonial }: TestimonialCardProps) => {
   return (
-    <div className="flex h-45 w-full max-w-80 flex-col justify-between gap-4 rounded-lg bg-white p-4">
+    <div className="flex h-45 w-full max-w-80 flex-1 flex-col justify-between gap-4 rounded-lg bg-white p-4">
       <Rating rating={testimonial.rating} />
       <div>
-        <p className="line-clamp-3 text-sm">{testimonial.quote}</p>
+        <p className="text-sm wrap-break-word whitespace-normal">
+          {testimonial.quote}
+        </p>
       </div>
       <div className="flex justify-between">
         <div className="flex items-center gap-2">
