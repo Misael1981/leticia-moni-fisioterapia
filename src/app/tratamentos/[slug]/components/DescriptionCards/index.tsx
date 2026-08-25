@@ -4,7 +4,7 @@ type DescriptionCardsProps = {
 
 const DescriptionCards = ({ children }: DescriptionCardsProps) => {
   return (
-    <div className="border-blue-custom bg-cream w-full max-w-5xl flex-1 rounded-lg border p-4">
+    <div className="border-blue-custom bg-cream w-full max-w-5xl flex-1 rounded-lg border-2 p-4">
       {children}
     </div>
   )

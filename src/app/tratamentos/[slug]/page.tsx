@@ -11,15 +11,6 @@ interface TreatmentPageProps {
   }>
 }
 
-const tags = [
-  "Tontura",
-  "Vertigem posicional",
-  "Desequilíbrio",
-  "Dor",
-  "Pós-labirintite",
-  "Pós-cirúrgico",
-]
-
 export default async function TreatmentPage({ params }: TreatmentPageProps) {
   const resolvedParams = await params
 
@@ -36,6 +27,7 @@ export default async function TreatmentPage({ params }: TreatmentPageProps) {
         description={treatment.description}
         imageUrl={treatment.imageUrl}
       />
+
       <section className="flex items-center justify-center p-4">
         <div className="flex flex-col items-center justify-center gap-4">
           <DescriptionCards>
@@ -43,14 +35,7 @@ export default async function TreatmentPage({ params }: TreatmentPageProps) {
               <h3 className="text-blue-custom font-semibold uppercase">
                 O que é
               </h3>
-              <p className="text-blue-dark text-sm">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga
-                officiis eveniet, praesentium, expedita dignissimos iure cum
-                ullam distinctio mollitia deserunt aliquid sed error dolorum
-                repellat iusto eius facilis cupiditate aspernatur non soluta.
-                Unde sed odio atque culpa saepe necessitatibus aut incidunt ex
-                omnis rerum. Corrupti maiores ipsam incidunt!
-              </p>
+              <p className="text-blue-dark text-sm">{treatment.about}</p>
             </div>
           </DescriptionCards>
 
@@ -61,7 +46,7 @@ export default async function TreatmentPage({ params }: TreatmentPageProps) {
               </h3>
 
               <div className="flex w-full flex-wrap items-center justify-center gap-4">
-                {tags.map((tag) => (
+                {treatment.benefits.map((tag) => (
                   <Badge
                     key={tag}
                     className="border-blue-custom text-blue-custom border"
@@ -78,7 +63,7 @@ export default async function TreatmentPage({ params }: TreatmentPageProps) {
             <DescriptionCards>
               <div className="space-y-2">
                 <h3 className="text-blue-custom text-center text-2xl font-semibold uppercase">
-                  6-8
+                  {treatment.durationMinWeeks}-{treatment.durationMaxWeeks}
                 </h3>
                 <p className="text-blue-dark text-center text-sm">
                   semanas de tratamento (em média)
@@ -89,7 +74,7 @@ export default async function TreatmentPage({ params }: TreatmentPageProps) {
             <DescriptionCards>
               <div className="space-y-2">
                 <h3 className="text-blue-custom text-center text-2xl font-semibold">
-                  1-2x
+                  {treatment.sessionsPerWeekMin}-{treatment.sessionsPerWeekMax}x
                 </h3>
 
                 <p className="text-blue-dark text-center text-sm">
@@ -105,15 +90,14 @@ export default async function TreatmentPage({ params }: TreatmentPageProps) {
                 Como é o atendimento
               </h3>
               <p className="text-blue-dark text-sm">
-                Cada plano é personalizado após avaliação detalhada. Os
-                exercícios são realizados em consultório e em casa, com
-                acompanhamento contínuo da evolução do paciente.
+                {treatment.attendanceInfo}
               </p>
             </div>
           </DescriptionCards>
         </div>
       </section>
-      <TestimonialsTreatment />
+
+      <TestimonialsTreatment whatsapp={treatment.clinic.whatsapp} />
     </div>
   )
 }

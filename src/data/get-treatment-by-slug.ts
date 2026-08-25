@@ -6,18 +6,18 @@ export async function getTreatmentBySlug(slug: string) {
       where: {
         slug,
       },
-      select: {
-        id: true,
-        name: true,
-        description: true,
-        slug: true,
-        imageUrl: true,
+      include: {
+        clinic: {
+          select: {
+            whatsapp: true,
+          },
+        },
       },
     })
 
     return treatment
   } catch (error) {
-    console.error("Erro ao buscar  tratamento:", error)
+    console.error("Erro ao buscar tratamento:", error)
     throw new Error("Não foi possível carregar o tratamento.")
   }
 }
