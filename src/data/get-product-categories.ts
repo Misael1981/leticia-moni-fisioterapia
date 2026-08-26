@@ -1,19 +1,36 @@
 import { db } from "@/lib/prisma"
 
-export async function getProductsCategories() {
+interface GetProductsCategoriesParams {
+  clinicId?: string
+}
+
+export async function getProductsCategories({
+  clinicId,
+}: GetProductsCategoriesParams = {}) {
   try {
     const categories = await db.category.findMany({
-      orderBy: {
-        name: "asc",
-      },
+      // where: {
+      //   ...(clinicId ? { clinicId } : {}),
+      //   products: {
+      //     some: {
+      //       isActive: true,
+      //     },
+      //   },
+      // },
+      // orderBy: {
+      //   name: "asc",
+      // },
       select: {
         id: true,
         name: true,
         description: true,
-
         products: {
           where: {
             isActive: true,
+            ...(clinicId ? { clinicId } : {}),
+          },
+          orderBy: {
+            name: "asc",
           },
           select: {
             id: true,

@@ -4,9 +4,16 @@ import CarouselStore from "./components/CarouselStore"
 import Link from "next/link"
 
 const GataDaLuaSession = async () => {
-  const categories = await getProductsCategories()
+  const clinicId = "main-clinic"
+  const categories = await getProductsCategories({ clinicId })
 
-  const categoryGataDaLua = categories[0]
+  const targetCategory =
+    categories.find((c) => c.name === "Blend de Óleos Essenciais") ||
+    categories[0]
+
+  if (!targetCategory) {
+    return null
+  }
 
   return (
     <section className="bg-blue-gradient flex min-h-[50vh] w-full justify-center p-4 text-white lg:p-8">
@@ -32,8 +39,10 @@ const GataDaLuaSession = async () => {
             </div>
           </div>
           <div>
+            {/* 3. Optional chaining caso a categoria não tenha descrição cadastrada */}
             <p className="line-clamp-4 text-center text-sm">
-              {categoryGataDaLua.description}
+              {targetCategory.description ||
+                "Conheça nossos produtos de aromaterapia."}
             </p>
             <div className="flex justify-end">
               <Link href="/gata-da-lua" className="text-amber-400 lg:hidden">
@@ -43,7 +52,10 @@ const GataDaLuaSession = async () => {
           </div>
         </div>
 
-        <CarouselStore products={categoryGataDaLua.products} />
+        {/* 4. Passa apenas os produtos da categoria garantida */}
+        {categories[0].products && categories[0].products.length > 0 && (
+          <CarouselStore products={categories[0].products} />
+        )}
       </div>
     </section>
   )
