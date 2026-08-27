@@ -38,6 +38,7 @@ const GataDaLuaSession = async () => {
               </p>
             </div>
           </div>
+
           <div>
             {/* 3. Optional chaining caso a categoria não tenha descrição cadastrada */}
             <p className="line-clamp-4 text-center text-sm">
@@ -56,6 +57,15 @@ const GataDaLuaSession = async () => {
         {categories[0].products && categories[0].products.length > 0 && (
           <CarouselStore products={categories[0].products} />
         )}
+
+        <div className="flex justify-end">
+          <Link
+            href="/gata-da-lua"
+            className="bg-cream-gradient text-blue-custom rounded-md px-3 py-2 font-semibold"
+          >
+            Conheça toda nossa linha
+          </Link>
+        </div>
       </div>
     </section>
   )

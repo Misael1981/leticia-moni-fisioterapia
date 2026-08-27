@@ -1,6 +1,6 @@
-import { Button } from "@/components/ui/button"
 import { ProductDTO } from "@/dtos/categories-products.dto"
 import Image from "next/image"
+import Link from "next/link"
 
 type ProductCardProps = {
   product: ProductDTO
@@ -33,7 +33,12 @@ const ProductCard = ({ product }: ProductCardProps) => {
         </div>
 
         <div className="flex justify-end">
-          <Button className="bg-blue-gradient text-white">Saiba mais</Button>
+          <Link
+            href={`/gata-da-lua/#${product.id}`}
+            className="bg-blue-gradient rounded-md px-3 py-2 text-white"
+          >
+            Saiba mais
+          </Link>
         </div>
       </div>
     </div>

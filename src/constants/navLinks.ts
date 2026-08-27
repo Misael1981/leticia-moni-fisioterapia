@@ -2,7 +2,7 @@ export const sessions = [
   { name: "Home", href: "/" },
   { name: "Nossos Serviços", href: "/#services" },
   { name: "Sobre Nós", href: "/#about" },
-  { name: "Gata da Lua", href: "/aromaterapia" },
+  { name: "Gata da Lua", href: "/gata-da-lua" },
   { name: "Contato", href: "/#contact" },
   { name: "Horário de Atendimento", href: "#footer" },
 ]
@@ -11,7 +11,7 @@ export const linksPage = [
   { label: "Início", href: "/", id: 1 },
   { label: "Nossos Serviços", href: "/#services", id: 2 },
   { label: "Sobre Nós", href: "/#about", id: 3 },
-  { label: "Gata da Lua", href: "/aromaterapia", id: 4 },
+  { label: "Gata da Lua", href: "/gata-da-lua", id: 4 },
   { label: "Depoimentos", href: "/#", id: 5 },
   { label: "Horário de Atendimento", href: "#footer", id: 6 },
 ]

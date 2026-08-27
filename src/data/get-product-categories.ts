@@ -53,3 +53,56 @@ export async function getProductsCategories({
     throw new Error("Não foi possível carregar as categorias de produtos.")
   }
 }
+
+export async function getProductsForGroups() {
+  try {
+    const category = await db.category.findFirst({
+      where: {
+        name: "Blend de Óleos Essenciais",
+      },
+      select: {
+        id: true,
+        name: true,
+        description: true,
+        clinic: {
+          select: {
+            whatsapp: true,
+          },
+        },
+        productsGroup: {
+          orderBy: {
+            position: "asc",
+          },
+          select: {
+            id: true,
+            name: true,
+            description: true,
+            products: {
+              orderBy: {
+                name: "asc",
+              },
+              select: {
+                id: true,
+                name: true,
+                description: true,
+                indications: true,
+                benefits: true,
+                images: {
+                  select: {
+                    id: true,
+                    url: true,
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    })
+
+    return category
+  } catch (error) {
+    console.error("Erro ao buscar categorias de produtos:", error)
+    throw new Error("Não foi possível carregar as categorias de produtos.")
+  }
+}
