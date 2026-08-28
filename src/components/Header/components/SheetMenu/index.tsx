@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button"
 import {
   Sheet,
-  SheetClose,
   SheetContent,
   SheetDescription,
   SheetFooter,
@@ -17,6 +16,10 @@ type SheetMenuProps = {
 }
 
 const SheetMenu = ({ open, onOpenChange }: SheetMenuProps) => {
+  const handleCloseSheet = () => {
+    onOpenChange(false)
+  }
+
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
       <SheetContent>
@@ -41,11 +44,12 @@ const SheetMenu = ({ open, onOpenChange }: SheetMenuProps) => {
           ))}
         </div>
         <SheetFooter>
-          <SheetClose asChild>
-            <Button className="border-blue-custom text-blue-custom border bg-transparent">
-              Fechar
-            </Button>
-          </SheetClose>
+          <Button
+            className="border-blue-custom text-blue-custom border bg-transparent"
+            onClick={handleCloseSheet}
+          >
+            Fechar
+          </Button>
         </SheetFooter>
       </SheetContent>
     </Sheet>

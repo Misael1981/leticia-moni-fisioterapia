@@ -87,6 +87,7 @@ export async function getProductsForGroups() {
                 description: true,
                 indications: true,
                 benefits: true,
+                price: true,
                 images: {
                   select: {
                     id: true,
@@ -100,7 +101,18 @@ export async function getProductsForGroups() {
       },
     })
 
-    return category
+    if (!category) return null
+
+    return {
+      ...category,
+      productsGroup: category.productsGroup.map((group) => ({
+        ...group,
+        products: group.products.map((product) => ({
+          ...product,
+          price: Number(product.price),
+        })),
+      })),
+    }
   } catch (error) {
     console.error("Erro ao buscar categorias de produtos:", error)
     throw new Error("Não foi possível carregar as categorias de produtos.")

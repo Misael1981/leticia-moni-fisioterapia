@@ -1,8 +1,9 @@
+import CTAButton from "@/components/CTAButton"
 import Image from "next/image"
 
 const AboutCardOne = () => {
   return (
-    <div className="relative h-[70vh] w-full overflow-hidden rounded-lg lg:h-[90vh]">
+    <div className="relative h-[80vh] w-full overflow-hidden rounded-lg lg:h-[90vh]">
       <Image
         src="/images/about/bg-about2.webp"
         alt="Letícia Mori"
@@ -14,7 +15,7 @@ const AboutCardOne = () => {
       <div className="absolute inset-0 bg-linear-to-t from-slate-900/98 via-slate-900/50 to-transparent" />
       <div className="absolute inset-0 bg-linear-to-t from-slate-900/10 via-slate-900/50 to-transparent" />
 
-      <div className="absolute inset-0 flex flex-col justify-between p-6">
+      <div className="absolute inset-0 flex flex-col justify-between gap-4 p-6">
         <div className="flex justify-end">
           <div className="flex flex-col items-center justify-center gap-1">
             <Image src="/images/logo.svg" alt="Logo" width={70} height={70} />
@@ -40,6 +41,10 @@ const AboutCardOne = () => {
             onde o toque, a ciência e a empatia se encontram para restabelecer o
             bem-estar.
           </p>
+        </div>
+
+        <div className="flex justify-center md:hidden">
+          <CTAButton />
         </div>
       </div>
     </div>

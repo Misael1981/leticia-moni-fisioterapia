@@ -3,7 +3,7 @@ import Image from "next/image"
 
 const AboutCardTwo = () => {
   return (
-    <div className="flex h-[70vh] w-full flex-col gap-4 lg:h-[90vh]">
+    <div className="hidden h-[70vh] w-full flex-col gap-4 md:flex lg:h-[90vh]">
       <div className="flex h-1/2 w-full flex-col gap-4">
         <div className="flex h-1/2 w-full gap-4">
           <div className="bg-beige-gradient text-cream h-full flex-1 rounded-lg p-1 md:p-4">

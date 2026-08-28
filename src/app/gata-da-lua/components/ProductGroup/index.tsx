@@ -11,6 +11,7 @@ type ProductGroupProps = {
       description: string | null
       benefits: string | null
       indications: string | null
+      price: number
       images: {
         id: string
         url: string

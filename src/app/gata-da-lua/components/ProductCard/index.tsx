@@ -1,3 +1,4 @@
+import { formatCurrency } from "@/helpers/format-currency"
 import Image from "next/image"
 import Link from "next/link"
 import { FaWhatsapp } from "react-icons/fa"
@@ -9,6 +10,7 @@ type ProductCardProps = {
     description: string | null
     benefits: string | null
     indications: string | null
+    price: number
     images: {
       id: string
       url: string
@@ -26,13 +28,14 @@ const ProductCard = ({ product, phone }: ProductCardProps) => {
       className="group flex w-full max-w-5xl flex-col gap-4 rounded-lg bg-white/3 p-4 transition-shadow hover:shadow-lg lg:flex-row-reverse"
     >
       {/* Imagem */}
-      <div className="shrink-0 overflow-hidden rounded-md lg:w-62 lg:self-stretch">
+      <div className="relative h-48 w-full shrink-0 overflow-hidden rounded-md sm:h-56 lg:h-auto lg:w-62 lg:self-stretch">
         <Image
           src={imageUrl}
           alt={product.name || "Imagem do produto"}
-          width={250}
-          height={250}
-          className="h-full w-full object-cover"
+          fill
+          sizes="(max-width: 1024px) 100vw, 248px"
+          className="object-cover"
+          quality={90}
         />
       </div>
 
@@ -40,9 +43,11 @@ const ProductCard = ({ product, phone }: ProductCardProps) => {
       <div className="flex w-full flex-col justify-between">
         <div>
           {/* Nome */}
-          <h3 className="text-cream w-fit text-xl font-semibold">
-            {product.name}
-          </h3>
+          <div>
+            <h3 className="text-cream w-fit text-xl font-semibold">
+              {product.name}
+            </h3>
+          </div>
 
           {/* Descrição */}
           <p className="mt-2 text-sm">{product.description}</p>
@@ -62,7 +67,11 @@ const ProductCard = ({ product, phone }: ProductCardProps) => {
         </div>
 
         {/* Ação */}
-        <div className="mt-4 flex justify-end">
+        <div className="mt-4 flex items-center justify-between">
+          <span className="text-cream text-lg font-bold">
+            {formatCurrency(product.price)}
+          </span>
+
           <Link
             href={`https://wa.me/${phone?.replace(/\D/g, "")}?text=${encodeURIComponent(
               "Olá! Gostaria de saber mais informações sobre os Blends disponíveis.",
