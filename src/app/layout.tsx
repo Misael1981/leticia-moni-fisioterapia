@@ -52,6 +52,24 @@ export const metadata: Metadata = {
   title: "Letícia Moni Fisioterapia",
   description:
     "Fisioterapia Especializada em Reabilitação de Face, Cabeça e Pescoço",
+
+  openGraph: {
+    title: "Letícia Moni Fisioterapia",
+    description:
+      "Fisioterapia Especializada em Reabilitação de Face, Cabeça e Pescoço.",
+    url: "https://leticia-moni-fisioterapia.vercel.app",
+    siteName: "Letícia Moni Fisioterapia",
+    images: [
+      {
+        url: "/icon-512.png",
+        width: 512,
+        height: 512,
+        alt: "Letícia Moni Fisioterapia",
+      },
+    ],
+    locale: "pt_BR",
+    type: "website",
+  },
 }
 
 export default function RootLayout({
