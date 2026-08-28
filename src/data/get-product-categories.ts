@@ -58,7 +58,7 @@ export async function getProductsForGroups() {
   try {
     const category = await db.category.findFirst({
       where: {
-        name: "Blend de Óleos Essenciais",
+        id: "06ff061f-9c83-450c-b60d-d5762a8ddee5",
       },
       select: {
         id: true,

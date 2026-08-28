@@ -8,8 +8,7 @@ const GataDaLuaSession = async () => {
   const categories = await getProductsCategories({ clinicId })
 
   const targetCategory =
-    categories.find((c) => c.name === "Blend de Óleos Essenciais") ||
-    categories[0]
+    categories.find((c) => c.name === "Produtos Terapêuticos") || categories[0]
 
   if (!targetCategory) {
     return null
@@ -34,7 +33,7 @@ const GataDaLuaSession = async () => {
                 Gata da Lua
               </h2>
               <p className="font-heading text-center text-sm tracking-widest text-white/60 uppercase">
-                Aromaterapia
+                {categories[0].name}
               </p>
             </div>
           </div>

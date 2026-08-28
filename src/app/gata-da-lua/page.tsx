@@ -15,6 +15,7 @@ export default async function Page() {
         description={
           category.description || "Conheça nossos produtos de aromaterapia."
         }
+        name={category.name}
       />
 
       {category.productsGroup.map((group) => (

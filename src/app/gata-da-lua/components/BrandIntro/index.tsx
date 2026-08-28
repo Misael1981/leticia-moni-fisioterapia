@@ -2,9 +2,10 @@ import Image from "next/image"
 
 type BrandIntroProps = {
   description?: string
+  name: string
 }
 
-const BrandIntro = ({ description }: BrandIntroProps) => {
+const BrandIntro = ({ description, name }: BrandIntroProps) => {
   return (
     <section className="w-full max-w-6xl space-y-4 text-white">
       <div className="flex w-full flex-col items-center justify-center gap-4 md:flex-row">
@@ -22,7 +23,7 @@ const BrandIntro = ({ description }: BrandIntroProps) => {
             Gata da Lua
           </h2>
           <p className="font-heading text-center text-sm tracking-widest text-white/60 uppercase">
-            Aromaterapia
+            {name}
           </p>
         </div>
       </div>
