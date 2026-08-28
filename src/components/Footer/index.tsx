@@ -1,34 +1,20 @@
 import Image from "next/image"
-import { CiLinkedin } from "react-icons/ci"
-import { FaInstagram } from "react-icons/fa"
-import { SlSocialFacebook } from "react-icons/sl"
 import CTAButton from "../CTAButton"
 import { linksPage, openingHours } from "@/constants/navLinks"
 import Link from "next/link"
+import { getClinic } from "@/data/get-clinic"
+import SocialMidiaFooter from "./components/SocialMidiaFooter"
 
-const Footer = () => {
+const Footer = async () => {
+  const clinic = await getClinic()
+
   return (
     <footer className="bg-blue-dark min-h-[30vh] w-full text-white">
-      {/* Social Mídia */}
-      <div className="flex flex-col items-center justify-center gap-4 border-b-2 p-4 lg:flex-row lg:justify-between lg:px-8">
-        <div>
-          <p>Nos siga nas redes sociais</p>
-        </div>
-
-        <nav>
-          <ul className="flex gap-4">
-            <li>
-              <FaInstagram size={24} />
-            </li>
-            <li>
-              <SlSocialFacebook size={24} />
-            </li>
-            <li>
-              <CiLinkedin size={24} />
-            </li>
-          </ul>
-        </nav>
-      </div>
+      {/* Social Mídia  */}
+      <SocialMidiaFooter
+        socialMidia={clinic?.socialMedia}
+        whatsapp={clinic?.whatsapp}
+      />
 
       {/* Hero Section */}
       <div className="flex flex-col items-center justify-center gap-6 px-4 py-8 lg:flex-row lg:justify-around lg:gap-12 lg:px-16">
