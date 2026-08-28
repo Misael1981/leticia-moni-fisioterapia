@@ -49,6 +49,7 @@ const anotherShabby = localFont({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://leticia-moni-fisioterapia.vercel.app"),
   title: "Letícia Moni Fisioterapia",
   description:
     "Fisioterapia Especializada em Reabilitação de Face, Cabeça e Pescoço",

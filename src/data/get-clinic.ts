@@ -2,7 +2,11 @@ import { db } from "@/lib/prisma"
 
 export async function getClinic() {
   try {
-    const clinic = db.clinic.findFirst()
+    const clinic = db.clinic.findFirst({
+      include: {
+        businessHours: true,
+      },
+    })
 
     return clinic
   } catch (error) {
