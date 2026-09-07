@@ -1,10 +1,11 @@
-import { testimonials } from "@/constants/forks"
 import Image from "next/image"
-import TestimonialCard from "./components/TestimonialCard"
 import { Button } from "../ui/button"
-import { ScrollArea, ScrollBar } from "../ui/scroll-area"
+import TestimonialCarousel from "./components/TestimonialCarousel"
+import { getTestimonials } from "@/data/testimonials.queries"
 
-const TestimonialSection = () => {
+const TestimonialSection = async () => {
+  const testimonials = await getTestimonials()
+
   return (
     <section className="relative min-h-[70vh] w-full overflow-hidden">
       <Image
@@ -26,19 +27,7 @@ const TestimonialSection = () => {
           </h3>
         </div>
 
-        <ScrollArea className="w-full">
-          <div className="flex gap-4 px-2 lg:justify-center">
-            {testimonials.map((testimonial) => (
-              <div
-                key={testimonial.id}
-                className="min-w-[80%] shrink-0 sm:min-w-[320px]"
-              >
-                <TestimonialCard testimonial={testimonial} />
-              </div>
-            ))}
-          </div>
-          <ScrollBar orientation="horizontal" />
-        </ScrollArea>
+        <TestimonialCarousel testimonials={testimonials} />
 
         <div className="flex justify-center lg:justify-end">
           <Button className="bg-blue-gradient text-white">
