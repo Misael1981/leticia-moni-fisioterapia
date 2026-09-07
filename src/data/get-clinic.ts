@@ -14,3 +14,11 @@ export async function getClinic() {
     throw new Error("Não foi possível carregar os dados da clínica.")
   }
 }
+
+export async function getClinicWhatsApp() {
+  return await db.clinic.findFirst({
+    select: {
+      whatsapp: true,
+    },
+  })
+}

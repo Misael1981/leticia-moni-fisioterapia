@@ -41,15 +41,25 @@ const AboutCardTwo = () => {
 
         <div className="absolute inset-0 bg-amber-900/40" />
 
-        <div className="absolute inset-0 flex flex-col justify-between p-6 text-white">
-          <h2 className="text-2xl font-semibold">Tomada de ação</h2>
-          <p className="text-xs">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates
-            eum tempora ratione quidem aliquid veniam, iure culpa aspernatur
-            nemo, repellat pariatur quisquam quam dolores rem vitae explicabo
-            rerum praesentium inventore corrupti eius perferendis facere ad
-            quod. Itaque eligendi quisquam iusto!
-          </p>
+        <div className="absolute inset-0 flex flex-col justify-between space-y-3 p-4 text-white">
+          <h2 className="text-center text-lg font-semibold">
+            Clique no botão abaixo, agende o seu atendimento e dê o primeiro
+            passo para sua recuperação.
+          </h2>
+          <div className="space-y-2 text-justify">
+            <p className="text-xs">
+              Viver com dor ou tensão constante não precisa ser o seu normal.
+            </p>
+            <p className="text-xs">
+              O desconforto e a disfunção drenam sua energia, atrapalham seu
+              sono e roubam seu foco. Você não precisa apenas{" "}
+              <strong>aguentar</strong> o dia a dia. Com um tratamento
+              direcionado, é possível aliviar os pontos de pressão, recuperar a
+              leveza e devolver ao seu corpo a liberdade para funcionar em
+              harmonia. **Acredite na sua recuperação.** Agende seu atendimento
+              e dê o primeiro passo.
+            </p>
+          </div>
 
           <div className="flex justify-end">
             <CTAButton />
